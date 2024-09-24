@@ -1,0 +1,19 @@
+{% extends "auctionapp/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{%block content %}
+<div class='card w-30 shadow mx-auto mt-5 py-4 px-3 bg-light'>
+    <img width="40" class="mx-auto" src="{% static 'auctionapp/logo.png' %}"> 
+    <h1 class="text-center"> Login </h1>
+</div>
+<div class="card w-30 shadow mx-auto mt-5 py-4 px-3 text-center bg-light">
+    {% crispy form %}  
+</div>
+<div class="card w-30 shadow mx-auto mt-5 py-4 px-3 text-center bg-light" style="width:200px">
+    Haven't signed up? 
+    <a class="btn btn-outline-primary mt-3" href="{% url 'auctionapp:signup' %}">
+        Signup
+    </a>
+</div>
+{% endblock %}
